@@ -50,10 +50,7 @@ public class Solution_SWEA1865 {
 				}
 			}// input
 			
-			for(int i=0;i<N;i++) {
-				dfs(i,1,0);
-			}
-			
+			dfs(0,1,0);
 			sb.append(String.format("%.6f",maxPos)).append("\n");
 		}// tc fin
 		
