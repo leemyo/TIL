@@ -5,11 +5,23 @@ import java.util.*;
 
 public class Main_14719 {
 	
-	static int H, W, answer;
-	static int height[];
+	static int H,W;
 	
-	static void cntRainwater() {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		H = Integer.parseInt(st.nextToken());
+		W = Integer.parseInt(st.nextToken());
+		
+		st = new StringTokenizer(br.readLine());
+		int height[] = new int[W];
+		for(int i=0;i<W;i++) {
+			height[i]=Integer.parseInt(st.nextToken());
+		}
+		
 		Stack<Integer> stack = new Stack<>();
+		int answer=0;
 		
 		stack.add(height[0]);
 		int wall=height[0];
@@ -39,24 +51,8 @@ public class Main_14719 {
 				}
 			}
 		}
-	}
-	
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		H = Integer.parseInt(st.nextToken());
-		W = Integer.parseInt(st.nextToken());
-		
-		st = new StringTokenizer(br.readLine());
-		height = new int[W];
-		for(int i=0;i<W;i++) {
-			height[i]=Integer.parseInt(st.nextToken());
-		}
-		
-		cntRainwater();
 		System.out.println(answer);
-		
 		br.close();
 	}
 }
