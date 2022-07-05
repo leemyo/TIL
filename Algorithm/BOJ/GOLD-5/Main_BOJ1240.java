@@ -28,7 +28,7 @@ public class Main_BOJ1240 {
 		while(!q.isEmpty()) {
 			int now = q.poll();
 			for(Node next:edges[now]) {
-				if (order[next.vertex]!=0 && order[now]+next.w>=order[next.vertex]) continue;
+				if (order[next.vertex]!=0) continue;
 				order[next.vertex]=order[now]+next.w;
 				q.add(next.vertex);
 			}
@@ -66,13 +66,6 @@ public class Main_BOJ1240 {
 			sb.append(findDist(s,e)).append("\n");
 		} // input
 		
-//		for(int i=1;i<=N;i++) {
-//			System.out.print(i+" : ");
-//			for(Node next:edges[i]) {
-//				System.out.print(next.vertex+" ");
-//			}
-//			System.out.println();
-//		}
 		System.out.println(sb.toString());
 	}
 }
